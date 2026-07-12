@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora — Adaptive AI Learning Mentor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-mode="mentor">
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">✦</span>
+        <h1 class="brand-name">Nexora</h1>
+        <span class="brand-tagline">Adaptive AI Learning Mentor</span>
+      </div>
+
+      <!-- Mode selector -->
+      <nav class="mode-nav" role="navigation" aria-label="Learning mode selector">
+        <button
+          class="mode-btn active"
+          data-mode="mentor"
+          title="Step-by-step guided learning"
+          aria-pressed="true"
+        >
+          <span class="mode-icon">🎓</span>
+          <span class="mode-label">Mentor</span>
+        </button>
+        <button
+          class="mode-btn"
+          data-mode="assistant"
+          title="Quick, direct answers"
+          aria-pressed="false"
+        >
+          <span class="mode-icon">⚡</span>
+          <span class="mode-label">AI Assistant</span>
+        </button>
+        <button
+          class="mode-btn"
+          data-mode="cheatcode"
+          title="Short notes + exam cheat sheet"
+          aria-pressed="false"
+        >
+          <span class="mode-icon">📋</span>
+          <span class="mode-label">Cheat Code</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Active mode description strip -->
+    <div class="mode-description" id="modeDescription" aria-live="polite">
+      <strong>Mentor Mode</strong> — I'll guide you step-by-step, explain concepts clearly, and check your understanding.
+    </div>
+  </header>
+
+  <!-- ── Main layout ────────────────────────────────────── -->
+  <main class="main-layout">
+
+    <!-- Chat panel -->
+    <section class="chat-panel" aria-label="Chat conversation">
+      <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-atomic="false">
+
+        <!-- Welcome message -->
+        <div class="message assistant-message welcome-message">
+          <div class="message-avatar" aria-hidden="true">✦</div>
+          <div class="message-body">
+            <p class="welcome-heading">Welcome to Nexora</p>
+            <p>I'm your adaptive AI learning mentor. Choose a mode above, then ask me anything — a concept to understand, a topic to summarise, or material to turn into a cheat sheet.</p>
+            <p class="welcome-hint">Try: <em>"Explain photosynthesis"</em> or <em>"Summarise the French Revolution"</em></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Typing indicator (hidden by default) -->
+      <div class="typing-indicator" id="typingIndicator" aria-hidden="true" hidden>
+        <div class="typing-avatar" aria-hidden="true">✦</div>
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <span class="typing-label">Nexora is thinking…</span>
+      </div>
+    </section>
+
+    <!-- Input panel -->
+    <div class="input-panel">
+      <div class="input-inner">
+        <label for="messageInput" class="sr-only">Your message</label>
+        <textarea
+          id="messageInput"
+          class="message-input"
+          placeholder="Ask anything… (Shift+Enter for new line, Enter to send)"
+          rows="1"
+          autocomplete="off"
+          spellcheck="true"
+          aria-label="Type your message"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" aria-label="Send message" title="Send (Enter)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <p class="input-footer">
+        Powered by <strong>IBM watsonx.ai</strong> &nbsp;·&nbsp;
+        <span id="currentModeLabel" class="mode-chip">Mentor Mode</span>
+      </p>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
