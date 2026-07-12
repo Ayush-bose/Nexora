@@ -1,10 +1,8 @@
-# ✦ Nexora — Adaptive AI Learning Mentor
+✦ Nexora — Adaptive AI Learning Mentor
 
 A clean, warm-designed chat application powered by **IBM watsonx.ai** with three intelligent learning modes: Mentor, AI Assistant, and Cheat Code.
 
----
-
-## Screenshots
+## interface
 
 > After cloning and running locally you'll see a warm, paper-toned chat interface with a sticky mode selector in the header.
 
@@ -30,36 +28,6 @@ A clean, warm-designed chat application powered by **IBM watsonx.ai** with three
 - An **IBM Cloud account** with watsonx.ai access
 
 ---
-
-## Getting Your IBM watsonx.ai Credentials
-
-You need three values. Here's how to get each one:
-
-### 1. `WX_API_KEY` — IBM Cloud API Key
-
-1. Log in to [cloud.ibm.com](https://cloud.ibm.com)
-2. Click your avatar (top-right) → **Manage → Access (IAM)**
-3. Left sidebar → **API keys** → **Create an IBM Cloud API key**
-4. Name it (e.g. `nexora-key`), copy the value — **you won't see it again**
-
-### 2. `WX_PROJECT_ID` — watsonx.ai Project ID
-
-1. Go to [dataplatform.cloud.ibm.com](https://dataplatform.cloud.ibm.com) (IBM watsonx)
-2. Open or create a **project**
-3. In the project, go to **Manage → General** — copy the **Project ID** (UUID)
-
-### 3. `WX_DEPLOYMENT_URL` — Deployed Agent Endpoint
-
-1. In your watsonx.ai project, open **Deployments** (or go to the Deployment Spaces section)
-2. Find your deployed agent/model and open it
-3. Copy the **Endpoint URL** — it looks like:
-   ```
-   https://us-south.ml.cloud.ibm.com/ml/v1/deployments/YOUR_DEPLOYMENT_ID/text/generation
-   ```
-   > For a chat model, the URL may end with `/text/chat` instead of `/text/generation`. Use whichever your deployment shows.
-
----
-
 ## Running Locally
 
 ```bash
